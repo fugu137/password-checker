@@ -1,5 +1,9 @@
 # Password Checker
-This python script allows users to check if their passwords match any of the passwords in a database of passwords obtained via data breaches. The script uses the API at https://haveibeenpwned.com/Passwords and makes it possible to check passwords without inputting them into the password field on the website. (Some users may be reluctant to do this, as they may fear their password being compromised in the process.) The script hashes each password and then sends only the first five characters to the pwnedpassword service. The service returns all hashed passwords in the database which start with the same five characters (~500 entries), and this script searches these entries to see if any match the user's password. In this way, the pwnedpassword service never has access to the user's password (even in hashed form), and never knows whether it appears in the database.
+This python script allows users to check if their passwords match any of the passwords in a database of passwords obtained via data breaches. The script uses the API at https://haveibeenpwned.com/Passwords and makes it possible to check passwords without inputting them into the password field on the website.* (Some users may be reluctant to do this, as they may fear their password being compromised in the process.) 
+
+The script hashes each password and then sends only the first five characters to the pwnedpassword service. The service returns all hashed passwords in the database which start with the same five characters (~500 entries), and this script searches these entries to see if any match the user's password. In this way, the pwnedpassword service never has access to the user's password (even in hashed form), and never knows whether it appears in the database.
+
+**The idea for this script is from Computerphile: https://www.youtube.com/watch?v=hhUb5iknVJs. I decided to try writing the script myself as a learning exercise in python.*
 
 ## Instructions For Use:
 1. Download `password_checker.py` from the repository.

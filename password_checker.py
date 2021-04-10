@@ -12,7 +12,7 @@ while True:
     print()
 
     ### Get Password Details ###
-    password = input("\u001b[32m" + "Enter a password: " + "\033[0m")
+    password = input("Enter a password: ")
     apiURL = "https://api.pwnedpasswords.com/range/{}"
 
     passwordHash = hashlib.sha1(password.encode()).hexdigest()
@@ -36,14 +36,7 @@ while True:
             count = numberOfAppearances
             break
    
-    ### Changes Color of the Count Depending on Whether the Password was Found in the Database ###
-    countStr = str(count)
-    if count > 0:
-        countStr = "\u001b[31m" + countStr + "\033[0m"
-    elif count == 0:
-        countStr = "\u001b[32m" + countStr + "\033[0m"
-
     ### Prints Result ###    
-    print("Number of times your password appears in the database: " + countStr)
+    print("Number of times your password appears in the database: " + str(count))
 
 

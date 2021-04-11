@@ -5,9 +5,16 @@ The script hashes each password and then sends only the first five characters to
 
 **The idea for this script is from Computerphile: https://www.youtube.com/watch?v=hhUb5iknVJs. I decided to try writing the script myself as a learning exercise in python.*
 
-## Instructions For Use:
+## Instructions
+
+### Method 1:
+1. Under `Releases` to the right, click on `Password Checker`.
+2. Click `password_checker.exe` to download it.
+3. Once it is saved to your computer, run `password_checker.exe`.
+
+### Method 2:
 1. Download `password_checker.py` from the repository.
 2. Follow the instructions at https://wiki.python.org/moin/BeginnersGuide/Download to install Python (unless you already have it).
 3. Open the Command Prompt/Terminal and navigate to the folder whether you saved `password_checker.py`. 
-4. Next, type `python3 -m pip install requests`. (This installs the module used to communicate with the pwnedpassword service.)
-5. After the requests module is installed type `python3 password_checker.py`. The script should run and give you a prompt to type in a password. You can check as many passwords as you like.
+4. Next, type `python -m pip install requests`. (This installs the module used to communicate with the pwnedpassword service.)
+5. After the requests module is installed type `python password_checker.py`. The script should run and give you a prompt to type in a password. You can check as many passwords as you like.

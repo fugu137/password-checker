@@ -8,7 +8,7 @@ The script hashes each password and then sends only the first five characters to
 ## Instructions
 
 ### Method 1:
-1. Under `Releases` to the right, click on `Password Checker`.
+1. Under `Releases` to the right, click on `Password Checker` for the text-based version, or `Password Checker (GUI Version)` for the graphical interface.
 2. Click `password_checker.exe` to download it.
 3. Once it is saved to your computer, run `password_checker.exe`.
 

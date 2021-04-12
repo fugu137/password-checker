@@ -33,10 +33,18 @@ def search(event):
     result.configure(text=str(count))
 
 
+def toggleMaskPassword():
+    if checkbuttonValue.get():
+        field.configure(show="")
+    else:
+        field.configure(show="*")
+
 ### Build GUI ###
 window = tk.Tk()
 window.title("Password Checker")
-window.geometry("400x120")
+window.geometry("400x150")
+
+checkbuttonValue = tk.BooleanVar()
 
 header = tk.Frame(window)
 header.pack()
@@ -45,24 +53,27 @@ body = tk.Frame(window)
 body.grid_columnconfigure((0, 1, 2), weight=1, pad=10)
 body.pack()
 
-heading = tk.Label(header, text="Check to see if your passwords match any of the passwords in a large database of leaked passwords.", justify="left", wraplength=380, padx=10, pady=10)
-heading.grid(row=0)
+heading = tk.Label(header, text="Check to see if your passwords match any of the passwords in a large (~600 million) database of leaked passwords.", justify="left", wraplength=380, padx=10, pady=10)
+heading.pack()
 
 passLabel = tk.Label(body, text="Enter Password: ")
-passLabel.grid(sticky="e", row=1, column=0)
+passLabel.grid(sticky="e", row=0, column=0)
 
 field = tk.Entry(body, show="*")
-field.grid(sticky="w", row=1, column=1)
+field.grid(sticky="w", row=0, column=1)
 field.bind("<Return>", search)
 
 button = tk.Button(body, text="Submit")
-button.grid(sticky="w", row=1, column=2)
+button.grid(sticky="w", row=0, column=2)
 button.bind("<Button-1>", search)
+
+checkbox = tk.Checkbutton(body, text="Show password", var=checkbuttonValue, command=toggleMaskPassword)
+checkbox.grid(sticky="w", row=1, column=1)
 
 resultLabel = tk.Label(body, text="No. of Appearances: ")
 resultLabel.grid(sticky="e", row=2, column=0)
 
-result = tk.Label(body)
+result = tk.Label(body, pady=5)
 result.grid(sticky="w", row=2, column=1)
 
 window.mainloop()

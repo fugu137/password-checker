@@ -4,7 +4,7 @@ import tkinter as tk
 
 apiURL = "https://api.pwnedpasswords.com/range/{}"
 
-def search():
+def search(event):
     ### Get Password Details ###
     password = field.get()
     
@@ -33,6 +33,7 @@ def search():
     result.configure(text=str(count))
 
 
+### Build GUI ###
 window = tk.Tk()
 window.title("Password Checker")
 window.geometry("400x120")
@@ -41,6 +42,7 @@ header = tk.Frame(window)
 header.pack()
 
 body = tk.Frame(window)
+body.grid_columnconfigure((0, 1, 2), weight=1, pad=10)
 body.pack()
 
 heading = tk.Label(header, text="Check to see if your passwords match any of the passwords in a large database of leaked passwords.", justify="left", wraplength=380, padx=10, pady=10)
@@ -49,20 +51,20 @@ heading.grid(row=0)
 passLabel = tk.Label(body, text="Enter Password: ")
 passLabel.grid(sticky="e", row=1, column=0)
 
-field = tk.Entry(body)
+field = tk.Entry(body, show="*")
 field.grid(sticky="w", row=1, column=1)
 field.bind("<Return>", search)
 
-button = tk.Button(body, text="Submit", command=search)
-button.grid(sticky="ew", row=1, column=2)
+button = tk.Button(body, text="Submit")
+button.grid(sticky="w", row=1, column=2)
+button.bind("<Button-1>", search)
 
-resultLabel = tk.Label(body, text="Number. of Appearances: ")
+resultLabel = tk.Label(body, text="No. of Appearances: ")
 resultLabel.grid(sticky="e", row=2, column=0)
 
 result = tk.Label(body)
 result.grid(sticky="w", row=2, column=1)
 
-body.grid_columnconfigure((0, 1, 2), weight=1, pad=10)
 window.mainloop()
 
 

@@ -13,7 +13,7 @@ The script hashes each password and then sends only the first five characters to
 3. Once it is saved to your computer, run `password_checker.exe`.
 
 ### Method 2:
-1. Download `password_checker.py` from the repository.
+1. Download `password_checker.pyw` from the repository.
 2. Follow the instructions at https://wiki.python.org/moin/BeginnersGuide/Download to install Python (unless you already have it).
 3. Open the Command Prompt/Terminal and navigate to the folder whether you saved `password_checker.py`. 
 4. Next, type `python -m pip install requests`. (This installs the module used to communicate with the pwnedpassword service.)

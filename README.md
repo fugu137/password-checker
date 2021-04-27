@@ -11,6 +11,7 @@ The script hashes each password and then sends only the first five characters to
 1. Under `Releases` to the right, click on `Password Checker` for the text-based version, or `Password Checker (GUI Version)` for the graphical interface.
 2. Click `password_checker.exe` to download it.
 3. Once it is saved to your computer, run `password_checker.exe` or `password_checkerGUI.exe`.
+
 (Note that your antivirus software may mistakenly report that the file contains a virus. This is a common issue with executable files like this one made using PyInstaller. If you're worried about safety, you may wish to use the method below instead.)
 
 ### Method 2 (more secure):
